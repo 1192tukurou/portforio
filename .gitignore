@@ -1,0 +1,50 @@
+
+.gradle/
+/build/
+.project
+.classpath
+.settings/
+*.iml
+.idea/
+.vscode/
+.DS_Store
+target/
+*.log
+*.bak
+*.swp
+# Eclipse
+.metadata
+.recommenders/
+# IntelliJ
+.idea/
+*.iws
+*.ipr
+*.iml
+# Mac
+.DS_Store
+# Windows
+Thumbs.db
+# Spring Boot
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/build/
+!**/src/main/**/target/
+!**/src/test/**/build/
+!**/src/test/**/target/
+### STS ###
+.apt_generated
+.apt_generated_test
+.factorypath
+.springBeans
+.sts4-cache
+### Gradle ###
+.gradle
+/build/
+# Libraries
+/lib/
+# Misc
+*.bak
+*.log
+*.class
+# Specific to this project
+/uploads/ # アップロードされた画像はGitに含めない

@@ -1,0 +1,175 @@
+/* 全体設定 */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100vh; /* 画面いっぱいに広がるように */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ヘッダー */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* スマホで要素がはみ出さないように */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    white-space: nowrap; /* 改行されないように */
+}
+
+/* メインコンテンツ */
+main {
+    padding: 1rem;
+    flex-grow: 1; /* コンテンツが利用可能なスペースを埋めるように */
+}
+
+/* フォームコンテナ */
+.container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* パディングを含めて幅を計算 */
+    width: 90%; /* スマホ対応 */
+}
+
+/* フォーム要素 */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"],
+.input-group input[type="password"],
+.input-group input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* エラーメッセージ */
+.error-message {
+    color: #d9534f;
+    margin-top: 1rem;
+    display: none;
+    text-align: center;
+}
+
+/* 商品一覧グリッド */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 最小200px、最大1fr */
+    gap: 1rem;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 150px; /* 画像の高さを固定 */
+    object-fit: contain; /* アスペクト比を維持して収める */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    margin: 0.2rem 0;
+}
+
+.product-card button {
+    margin-top: auto; /* ボタンをカードの下部に配置 */
+}
+
+.purchase-btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.pagination button {
+    width: auto; /* ボタンの幅を自動調整 */
+    padding: 0.5rem 1rem;
+}
+
+/* 商品詳細画面の画像 */
+#productDetail img {
+    max-width: 100%;
+    height: 250px; /* 高さを固定 */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 1.5rem auto; /* 中央揃えと下マージン */
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+/* メディアクエリ (PC向け) */
+@media (min-width: 768px) {
+    .container {
+        width: 100%; /* PCでは最大幅まで広げる */
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* PCでは少し大きめに */
+    }
+}
