@@ -1,5 +1,6 @@
 package jp.levtech.rookie.config;
 
+import org.springframework.http.HttpMethod;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,6 +32,7 @@ public class WebSecurityConfig {
 				.permitAll()
 				)
 				.authorizeHttpRequests((requests) -> requests
+						.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 						.requestMatchers(new AntPathRequestMatcher("/register")).permitAll()
 						.requestMatchers(new AntPathRequestMatcher("/api/products")).permitAll()
 						.requestMatchers(new AntPathRequestMatcher("/api/products/{id}")).permitAll()
